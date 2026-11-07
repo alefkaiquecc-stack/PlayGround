@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#252b21" />
+  <title>Hollowmere — The Long Dusk</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="world" aria-label="Hollowmere island game"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <button class="brand" id="brandButton" aria-label="Open field journal"><span class="brand-mark">✳</span><span><b>HOLLOWMERE</b><small>THE LONG DUSK</small></span></button>
+      <div class="region-pill"><i></i><span id="regionName">Mosswood Verge</span><small id="clock">DAY 01 · 16:42</small></div>
+      <div class="top-actions"><button class="icon-btn" id="mapBtn" title="Map">⌖</button><button class="icon-btn" id="soundBtn" title="Atmosphere">◖</button><button class="icon-btn" id="menuBtn" title="Journal">☰</button></div>
+    </header>
+    <section class="hud-left">
+      <div class="portrait"><span>✦</span><i class="level-badge" id="level">1</i></div>
+      <div class="bars"><div class="bar-row"><span>VIGOR</span><div class="meter"><i class="health-fill" id="healthFill"></i></div><b id="healthText">100 / 100</b></div><div class="bar-row"><span>FOCUS</span><div class="meter mana"><i id="manaFill"></i></div><b id="manaText">60 / 60</b></div><div class="bar-row faith-row"><span>GRACE</span><div class="meter faith"><i id="faithFill"></i></div><b id="faithText">0</b></div></div>
+    </section>
+    <section class="quest-card" id="questCard"><div class="quest-kicker"><span class="live-dot"></span> FIELD NOTE · MAIN THREAD</div><b id="questTitle">A Bell in the Mire</b><p id="questText">Find the cracked bell tower beyond the old road.</p><div class="quest-progress"><i id="questProgress"></i></div><small id="questCount">0 / 1 DISCOVERED</small></section>
+    <div class="toast" id="toast"></div>
+    <div class="world-prompt" id="prompt"></div>
+    <div class="touch-controls" id="touchControls">
+      <div class="joystick" id="joystick"><div class="joy-knob" id="joyKnob"></div></div>
+      <div class="touch-actions"><button class="touch-action attack-action" data-action="attack"><span>✦</span><small>STRIKE</small></button><button class="touch-action spell-action" data-action="spell"><span>✧</span><small>EMBER</small></button><button class="touch-action interact-action" data-action="interact"><span>◎</span><small>USE</small></button></div>
+    </div>
+    <nav class="bottom-nav"><button class="active" data-tab="journal"><span>◇</span>Journal</button><button data-tab="pack"><span>▤</span>Pack <i class="nav-dot"></i></button><button data-tab="growth"><span>✧</span>Growth</button><button data-tab="hearth"><span>⌂</span>Hearth</button></nav>
+    <aside class="panel" id="panel"><div class="panel-head"><div><small id="panelEyebrow">FIELD JOURNAL</small><h2 id="panelTitle">The island remembers</h2></div><button id="closePanel" class="close-btn">×</button></div><div id="panelBody"></div></aside>
+    <div class="modal-scrim" id="intro"><div class="intro-card"><div class="intro-symbol">✳</div><div class="eyebrow">A WILDERNESS ACTION RPG</div><h1>The Long<br/><em>Dusk</em></h1><p>Hollowmere is not empty. It is only waiting to be heard.</p><div class="intro-rule"></div><div class="intro-controls"><span>WASD / ARROWS <small>MOVE</small></span><span>SPACE <small>STRIKE</small></span><span>SHIFT <small>EMBER</small></span><span>E <small>INTERACT</small></span></div><button class="primary-btn" id="beginBtn">STEP INTO HOLLOWMERE <span>→</span></button><small class="offline-note">SINGLE PLAYER · YOUR JOURNEY SAVES ON THIS DEVICE</small></div></div>
+    <div class="map-overlay" id="mapOverlay"><div class="map-card"><header><div><small>CHARTED WILDS</small><h2>Hollowmere Island</h2></div><button class="close-btn" id="closeMap">×</button></header><canvas id="mapCanvas" width="440" height="320"></canvas><div class="map-legend"><span><i class="legend-player"></i>You</span><span><i class="legend-landmark"></i>Landmark</span><span><i class="legend-known"></i>Revealed</span></div><p>Walk the roads. The map only remembers what you have seen.</p></div></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
